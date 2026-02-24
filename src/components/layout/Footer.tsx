@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
-import { navLinks } from "@/data/navigation";
+import { navLinks, footerExtraLinks } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 
 const socialLinks = [
@@ -27,16 +27,29 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-text-secondary transition-colors hover:text-accent-primary"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-center gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-text-secondary transition-colors hover:text-accent-primary"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex items-center gap-4">
+              {footerExtraLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs text-text-muted transition-colors hover:text-accent-primary"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="flex items-center gap-4">

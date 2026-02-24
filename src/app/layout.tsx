@@ -45,6 +45,11 @@ export const metadata: Metadata = {
       "Neurosurgeon, Developer, Researcher, Entrepreneur.",
     creator: "@ishanperera07",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   robots: {
     index: true,
     follow: true,
