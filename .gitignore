@@ -37,6 +37,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# source media (CV, headshot originals — copies in public/)
+/media
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*.local

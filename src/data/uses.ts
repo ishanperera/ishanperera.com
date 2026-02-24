@@ -13,12 +13,10 @@ export const usesCategories: UsesCategory[] = [
   {
     title: "Development",
     items: [
-      { name: "VS Code", description: "Primary editor — Vim keybindings, GitHub Copilot, and a minimal dark theme", url: "https://code.visualstudio.com" },
-      { name: "iTerm2 + zsh", description: "Terminal with Oh My Zsh and custom aliases for everything" },
-      { name: "GitHub Copilot", description: "AI pair programming for boilerplate and exploration" },
+      { name: "VS Code", description: "Primary editor for everything — TypeScript, Python, and beyond", url: "https://code.visualstudio.com" },
+      { name: "GitHub", description: "Version control, CI/CD, and open source collaboration", url: "https://github.com" },
       { name: "Vercel", description: "Deployment platform for all Next.js projects", url: "https://vercel.com" },
       { name: "Figma", description: "UI/UX design and prototyping", url: "https://figma.com" },
-      { name: "Postman", description: "API testing and documentation" },
       { name: "Docker", description: "Containerized development environments" },
     ],
   },

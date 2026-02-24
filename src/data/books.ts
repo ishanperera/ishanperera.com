@@ -10,13 +10,7 @@ export interface Book {
 }
 
 export const books: Book[] = [
-  {
-    title: "Principles of Neural Science",
-    author: "Eric Kandel et al.",
-    category: "neuroscience",
-    status: "reading",
-    note: "The definitive neuroscience reference — working through it chapter by chapter",
-  },
+  // Currently Reading
   {
     title: "Greenberg's Handbook of Neurosurgery",
     author: "Mark Greenberg",
@@ -25,33 +19,21 @@ export const books: Book[] = [
     note: "The neurosurgery bible — always within arm's reach",
   },
   {
-    title: "Designing Data-Intensive Applications",
-    author: "Martin Kleppmann",
-    category: "software",
-    status: "finished",
-    note: "Best book on distributed systems fundamentals",
+    title: "Clinical Neuroimaging",
+    author: "Defined by imaging modalities and pathology",
+    category: "neuroscience",
+    status: "reading",
+    note: "Building fluency in reading CT, MRI, and angiographic studies",
   },
   {
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    category: "software",
-    status: "finished",
-    note: "Changed how I think about writing maintainable code",
+    title: "Neurocritical Care: What Do I Do Now?",
+    author: "Jose Suarez & Romergryko Geocadin",
+    category: "neuroscience",
+    status: "reading",
+    note: "Practical decision-making for neuro ICU scenarios",
   },
-  {
-    title: "Zero to One",
-    author: "Peter Thiel",
-    category: "business",
-    status: "finished",
-    note: "Contrarian thinking about building startups",
-  },
-  {
-    title: "The Lean Startup",
-    author: "Eric Ries",
-    category: "business",
-    status: "finished",
-    note: "Applied these principles directly at Ravana and EZ Inn",
-  },
+
+  // Finished
   {
     title: "When Breath Becomes Air",
     author: "Paul Kalanithi",
@@ -60,22 +42,41 @@ export const books: Book[] = [
     note: "A neurosurgeon's meditation on mortality — deeply personal",
   },
   {
-    title: "The Structure of Scientific Revolutions",
-    author: "Thomas Kuhn",
+    title: "Neuroanatomy Text and Atlas",
+    author: "John Martin",
+    category: "neuroscience",
+    status: "finished",
+    note: "Foundational neuroanatomy with excellent illustrations",
+  },
+  {
+    title: "Breath",
+    author: "James Nestor",
+    category: "other",
+    status: "finished",
+    note: "The science of breathing — fascinating intersection of physiology and wellness",
+  },
+  {
+    title: "The Numerical Discourses of the Buddha",
+    author: "Bhikkhu Bodhi (translator)",
     category: "philosophy",
+    status: "finished",
+    note: "The Anguttara Nikaya — ancient wisdom organized by numerical sets",
+  },
+
+  // Want to Read
+  {
+    title: "Rhoton's Cranial Anatomy and Surgical Approaches",
+    author: "Albert Rhoton Jr.",
+    category: "neuroscience",
     status: "want-to-read",
+    note: "The gold standard of microsurgical anatomy",
   },
   {
-    title: "Algorithms to Live By",
-    author: "Brian Christian & Tom Griffiths",
-    category: "software",
+    title: "Youmans and Winn Neurological Surgery",
+    author: "H. Richard Winn et al.",
+    category: "neuroscience",
     status: "want-to-read",
-  },
-  {
-    title: "The Innovator's Dilemma",
-    author: "Clayton Christensen",
-    category: "business",
-    status: "want-to-read",
+    note: "The comprehensive neurosurgery reference set",
   },
 ];
 
