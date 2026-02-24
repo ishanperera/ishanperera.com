@@ -1,5 +1,6 @@
 export interface Venture {
   name: string;
+  slug: string;
   role: string;
   description: string;
   url?: string;
@@ -10,6 +11,7 @@ export interface Venture {
 export const ventures: Venture[] = [
   {
     name: "Ravana Solutions",
+    slug: "ravana-solutions",
     role: "Co-Founder — Since 2021",
     description:
       "A full-service digital agency building modern web applications, mobile apps, and AI-powered solutions for businesses across industries. From concept to deployment, we craft performant digital experiences using React, Next.js, React Native, and more.",
@@ -19,6 +21,7 @@ export const ventures: Venture[] = [
   },
   {
     name: "EZ Inn",
+    slug: "ez-inn",
     role: "Co-Founder & Operations Manager — Since 2020",
     description:
       "Co-founded and manage operations for a hospitality venture in Norfolk, VA. Handle day-to-day management, marketing, and business development while balancing medical training.",
@@ -26,6 +29,7 @@ export const ventures: Venture[] = [
   },
   {
     name: "HOLO Labs",
+    slug: "holo-labs",
     role: "Co-Founder, Board of Trustees — Since 2022",
     description:
       "Co-founded Healthcare Observations, Lexicography, and Outcomes Laboratories — the first student-led research lab at VCOM to adopt a research brokership approach. Focused on providing osteopathic students opportunities in research, product development, grant writing, and community outreach.",

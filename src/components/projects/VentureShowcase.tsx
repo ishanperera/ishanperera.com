@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -32,16 +33,24 @@ export function VentureShowcase() {
                     </Badge>
                   ))}
                 </div>
-                {featured.url && (
-                  <a
-                    href={featured.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <div className="flex items-center gap-6">
+                  <Link
+                    href={`/ventures/${featured.slug}`}
                     className="inline-flex items-center gap-2 font-mono text-sm text-accent-primary hover:underline"
                   >
-                    Visit {featured.name} <ExternalLink size={14} />
-                  </a>
-                )}
+                    View case study <ArrowRight size={14} />
+                  </Link>
+                  {featured.url && (
+                    <a
+                      href={featured.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-mono text-sm text-text-muted hover:text-accent-primary transition-colors"
+                    >
+                      Visit site <ExternalLink size={14} />
+                    </a>
+                  )}
+                </div>
               </div>
               <div className="w-full md:w-80 h-48 rounded-xl bg-bg-tertiary border border-border flex-shrink-0" />
             </div>
@@ -63,11 +72,17 @@ export function VentureShowcase() {
               <p className="text-sm text-text-secondary mb-4">
                 {venture.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {venture.tags.map((tag) => (
                   <Badge key={tag}>{tag}</Badge>
                 ))}
               </div>
+              <Link
+                href={`/ventures/${venture.slug}`}
+                className="inline-flex items-center gap-2 font-mono text-sm text-accent-primary hover:underline"
+              >
+                View case study <ArrowRight size={14} />
+              </Link>
             </Card>
           </ScrollReveal>
         ))}
