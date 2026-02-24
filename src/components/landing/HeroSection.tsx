@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { GridBackground } from "@/components/ui/GridBackground";
-import { GlowingOrb } from "@/components/ui/GlowingOrb";
+import { ParticleBrainWrapper } from "@/components/landing/ParticleBrainWrapper";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 
@@ -29,8 +29,7 @@ export function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <GridBackground />
-      <GlowingOrb className="top-1/4 -left-32" color="cyan" />
-      <GlowingOrb className="bottom-1/4 -right-32" color="purple" />
+      <ParticleBrainWrapper />
 
       <div className="container-wide relative z-10 flex flex-col items-center text-center">
         {/* Overline */}
