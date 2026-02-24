@@ -57,9 +57,9 @@ export const timeline: TimelineEvent[] = [
   },
   {
     year: "2021",
-    title: "Founded Ravana LLC",
+    title: "Co-Founded Ravana LLC",
     description:
-      "Founded Ravana LLC (ravanasolutions.com), a full-service digital agency building modern web applications, mobile apps, and AI-powered solutions.",
+      "Co-founded Ravana LLC (ravanasolutions.com), a full-service digital agency building modern web applications, mobile apps, and AI-powered solutions.",
     type: "venture",
   },
   {

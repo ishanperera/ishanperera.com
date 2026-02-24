@@ -10,7 +10,7 @@ export interface Venture {
 export const ventures: Venture[] = [
   {
     name: "Ravana Solutions",
-    role: "Owner — Since 2021",
+    role: "Co-Founder — Since 2021",
     description:
       "A full-service digital agency building modern web applications, mobile apps, and AI-powered solutions for businesses across industries. From concept to deployment, we craft performant digital experiences using React, Next.js, React Native, and more.",
     url: "https://www.ravanasolutions.com/",

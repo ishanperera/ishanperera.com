@@ -69,7 +69,7 @@ export default function AboutPage() {
                 Overdose Prevention Task Force.
               </p>
               <p>
-                Outside the hospital and lab, I founded Ravana Solutions (a digital
+                Outside the hospital and lab, I co-founded Ravana Solutions (a digital
                 agency), co-founded EZ Inn, and build software in React, Python,
                 Swift, and C++. When I truly need to unplug, you&apos;ll find me
                 working on automotive projects, brewing, cultivating mushrooms, or

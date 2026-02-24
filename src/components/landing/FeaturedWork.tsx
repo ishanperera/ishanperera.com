@@ -20,7 +20,7 @@ const featured = [
     overline: "Venture",
     title: "Ravana Solutions",
     description:
-      "Founded a full-service digital agency building modern web applications, mobile apps, and AI-powered solutions. Serving businesses across industries since 2021.",
+      "Co-founded a full-service digital agency building modern web applications, mobile apps, and AI-powered solutions. Serving businesses across industries since 2021.",
     tags: ["Next.js", "React Native", "AI/ML", "Web Development"],
     href: "https://www.ravanasolutions.com/",
     external: true,

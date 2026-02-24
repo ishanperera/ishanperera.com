@@ -36,7 +36,7 @@ const cards = [
   {
     title: "Ventures",
     description:
-      "Owner of Ravana Solutions (digital agency), Co-Founder of EZ Inn, and Co-Founder of HOLO Labs research laboratory.",
+      "Co-Founder of Ravana Solutions (digital agency), Co-Founder of EZ Inn, and Co-Founder of HOLO Labs research laboratory.",
     href: "/projects",
     icon: <Rocket size={28} />,
     tags: ["Ravana Solutions", "EZ Inn", "HOLO Labs"],
