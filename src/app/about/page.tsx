@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Badge } from "@/components/ui/Badge";
+import { Download } from "lucide-react";
 import { Timeline } from "@/components/about/Timeline";
 import { HobbiesGrid } from "@/components/about/HobbiesGrid";
 import { technicalSkills, medicalSkills } from "@/data/skills";
@@ -76,6 +77,13 @@ export default function AboutPage() {
                 volunteering — from Habitat for Humanity to the Ronald McDonald
                 House.
               </p>
+              <a
+                href="/Ishan-Perera-CV.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-lg bg-accent-primary px-5 py-2.5 font-display font-semibold text-sm text-bg-primary transition-all hover:shadow-[0_0_30px_rgba(0,229,255,0.3)]"
+              >
+                <Download size={16} /> Download CV
+              </a>
             </div>
           </div>
         </ScrollReveal>

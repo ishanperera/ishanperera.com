@@ -9,8 +9,8 @@ export const siteConfig = {
   social: {
     github: "https://github.com/ishanperera",
     linkedin: "https://www.linkedin.com/in/ishanperera07",
-    twitter: "https://twitter.com/ishanperera",
+    twitter: "https://x.com/ishanperera07",
   },
-  twitterHandle: "@ishanperera",
+  twitterHandle: "@ishanperera07",
   githubUsername: "ishanperera",
 };

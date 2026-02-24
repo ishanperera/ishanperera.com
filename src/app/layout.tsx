@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Ishan Perera, D.O.",
     description:
       "Neurosurgeon, Developer, Researcher, Entrepreneur.",
-    creator: "@ishanperera",
+    creator: "@ishanperera07",
   },
   robots: {
     index: true,
@@ -99,7 +99,7 @@ export default function RootLayout({
               sameAs: [
                 "https://github.com/ishanperera",
                 "https://www.linkedin.com/in/ishanperera07",
-                "https://twitter.com/ishanperera",
+                "https://x.com/ishanperera07",
               ],
               alumniOf: [
                 {
