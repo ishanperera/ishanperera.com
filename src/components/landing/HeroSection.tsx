@@ -64,6 +64,7 @@ export function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
           className="mt-8 space-y-1"
+          style={{ textShadow: "0 0 20px rgba(10,10,15,0.9), 0 0 40px rgba(10,10,15,0.7)" }}
         >
           <p className="text-lg md:text-xl text-text-secondary">
             PGY-1 Neurological Surgery Resident
@@ -83,6 +84,7 @@ export function HeroSection() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               className="text-base md:text-lg italic text-text-muted"
+              style={{ textShadow: "0 0 20px rgba(10,10,15,0.9), 0 0 40px rgba(10,10,15,0.7)" }}
             >
               &ldquo;{taglines[taglineIndex]}&rdquo;
             </motion.p>

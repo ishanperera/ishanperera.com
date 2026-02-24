@@ -213,10 +213,10 @@ function Particles() {
   return (
     <points ref={pointsRef} geometry={geometry}>
       <pointsMaterial
-        size={0.035}
+        size={0.03}
         vertexColors
         transparent
-        opacity={0.7}
+        opacity={0.55}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -228,7 +228,7 @@ function Particles() {
 export function ParticleBrain() {
   return (
     <Canvas
-      camera={{ position: [1.5, 0.8, 3.5], fov: 50 }}
+      camera={{ position: [1.5, 0.8, 2.8], fov: 50 }}
       dpr={[1, 1.5]}
       style={{
         position: "absolute",
