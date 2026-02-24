@@ -92,10 +92,10 @@ function Particles() {
   return (
     <points ref={pointsRef} geometry={geometry}>
       <pointsMaterial
-        size={2}
+        size={0.035}
         vertexColors
         transparent
-        opacity={0.5}
+        opacity={0.7}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
