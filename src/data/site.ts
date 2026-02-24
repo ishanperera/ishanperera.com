@@ -8,8 +8,9 @@ export const siteConfig = {
   url: "https://ishanperera.com",
   social: {
     github: "https://github.com/ishanperera",
-    linkedin: "https://www.linkedin.com/in/ishanperera/",
+    linkedin: "https://www.linkedin.com/in/ishanperera07",
     twitter: "https://twitter.com/ishanperera",
   },
+  twitterHandle: "@ishanperera",
   githubUsername: "ishanperera",
 };

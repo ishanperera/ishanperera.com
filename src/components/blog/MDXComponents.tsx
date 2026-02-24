@@ -95,7 +95,7 @@ export const mdxComponents: MDXComponents = {
   hr: () => <hr className="my-8 border-border" />,
   img: (props) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img className="rounded-xl border border-border my-6" alt="" {...props} />
+    <img className="rounded-xl border border-border my-6" {...props} alt={props.alt || ""} />
   ),
   table: (props) => (
     <div className="overflow-x-auto my-6">

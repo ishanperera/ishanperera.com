@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     title: "Ishan Perera, D.O.",
     description:
       "Neurosurgeon, Developer, Researcher, Entrepreneur.",
+    creator: "@ishanperera",
   },
   robots: {
     index: true,
@@ -75,6 +76,52 @@ export default function RootLayout({
             }}
           />
         </ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Ishan Perera",
+              jobTitle: "PGY-1 Neurosurgery Resident",
+              affiliation: [
+                {
+                  "@type": "Organization",
+                  name: "Henry Ford Health Providence Hospital",
+                },
+                {
+                  "@type": "Organization",
+                  name: "Michigan State University College of Human Medicine",
+                },
+              ],
+              url: "https://ishanperera.com",
+              image: "https://ishanperera.com/headshot.jpg",
+              sameAs: [
+                "https://github.com/ishanperera",
+                "https://www.linkedin.com/in/ishanperera07",
+                "https://twitter.com/ishanperera",
+              ],
+              alumniOf: [
+                {
+                  "@type": "EducationalOrganization",
+                  name: "Edward Via College of Osteopathic Medicine",
+                },
+                {
+                  "@type": "EducationalOrganization",
+                  name: "Old Dominion University",
+                },
+              ],
+              knowsAbout: [
+                "Neurosurgery",
+                "Software Development",
+                "Medical Research",
+                "Artificial Intelligence",
+              ],
+              description:
+                "PGY-1 Neurosurgery Resident at Henry Ford Providence Hospital. Software developer, researcher with 15+ publications, and entrepreneur.",
+            }),
+          }}
+        />
       </body>
     </html>
   );
