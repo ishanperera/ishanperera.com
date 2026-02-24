@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "sonner";
+import { CommandPaletteProvider } from "@/components/ui/CommandPaletteProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -80,6 +81,7 @@ export default function RootLayout({
               },
             }}
           />
+          <CommandPaletteProvider />
         </ThemeProvider>
         <script
           type="application/ld+json"

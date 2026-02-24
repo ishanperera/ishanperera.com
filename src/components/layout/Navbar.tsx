@@ -46,6 +46,17 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
+          <button
+            onClick={() =>
+              document.dispatchEvent(
+                new KeyboardEvent("keydown", { key: "k", metaKey: true })
+              )
+            }
+            className="hidden md:flex items-center gap-1.5 rounded-lg border border-border bg-bg-secondary px-3 py-1.5 text-xs text-text-muted transition-colors hover:text-accent-primary hover:border-accent-primary/30"
+            aria-label="Open command palette"
+          >
+            <span className="font-mono">Cmd+K</span>
+          </button>
           <ThemeToggle />
           <MobileMenu />
         </div>
