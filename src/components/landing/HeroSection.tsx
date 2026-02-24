@@ -34,7 +34,7 @@ export function HeroSection() {
 
       <div className="container-wide relative z-10 flex flex-col items-center text-center">
         {/* Overline */}
-        <div className="mb-8">
+        <div className="mb-8 min-h-[1.5rem]">
           <TypewriterText
             text="NEUROSURGEON . DEVELOPER . ENTREPRENEUR"
             delay={600}
@@ -61,8 +61,8 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
           className="mt-8 space-y-1"
         >

@@ -26,7 +26,7 @@ export function AnimatedText({
   const items = type === "character" ? text.split("") : text.split(" ");
 
   return (
-    <span className={className} aria-label={text}>
+    <span className={className} role="text" aria-label={text}>
       {items.map((item, i) => (
         <motion.span
           key={`${item}-${i}`}
@@ -38,7 +38,7 @@ export function AnimatedText({
             ease: "easeOut",
           }}
           className="inline-block"
-          aria-hidden
+          aria-hidden="true"
         >
           {item}
           {type === "word" && i < items.length - 1 ? "\u00A0" : ""}

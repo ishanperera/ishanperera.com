@@ -88,7 +88,7 @@ export function FeaturedWork() {
                       href={item.href}
                       className="inline-flex items-center gap-2 font-mono text-sm text-accent-primary hover:underline mt-2"
                     >
-                      Learn more <ArrowRight size={14} />
+                      View research <ArrowRight size={14} />
                     </Link>
                   )}
                 </div>
