@@ -1,0 +1,79 @@
+---
+title: "How We Used Voice Recognition AI to Predict Heart Failure"
+date: "2025-03-10"
+excerpt: "Our team built an NLP model that predicts NYHA heart failure classification from medical student clinical notes. Here's what we learned about AI, messy data, and the future of clinical decision support."
+tags: ["AI/ML", "Research", "NLP", "Cardiology"]
+---
+
+## From Clinical Notes to Predictions
+
+Every day, medical students and residents write clinical notes. They document histories, physicals, assessments, and plans. What if those notes contained enough signal to predict a patient's heart failure severity — without additional testing?
+
+That was the question behind our research, published in *Scientific Reports* (Nature). We set out to build a voice recognition-based analytical model that could predict NYHA heart failure classification directly from the language patterns in medical student documentation.
+
+## The Problem with Heart Failure Classification
+
+The New York Heart Association (NYHA) classification system is the standard for grading heart failure severity:
+
+- **Class I** — No limitation of physical activity
+- **Class II** — Slight limitation; comfortable at rest
+- **Class III** — Marked limitation; comfortable only at rest
+- **Class IV** — Unable to carry on any physical activity without discomfort
+
+The challenge? Classification is subjective. Two clinicians can evaluate the same patient and assign different classes. There's inherent variability in how we interpret symptoms and document findings. We wanted to see if NLP could find patterns humans might miss.
+
+## Building the Pipeline
+
+Our approach combined several techniques:
+
+1. **Data collection** — We gathered clinical notes from medical students during standardized patient encounters
+2. **Voice-to-text processing** — Notes were transcribed and normalized
+3. **Feature extraction** — We used NLP techniques to extract meaningful linguistic features from the text
+4. **Model training** — Multiple classification algorithms were tested against the labeled data
+
+```python
+# Simplified example of our text preprocessing
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+vectorizer = TfidfVectorizer(
+    max_features=500,
+    stop_words="english",
+    ngram_range=(1, 2)  # Unigrams and bigrams
+)
+
+features = vectorizer.fit_transform(clinical_notes)
+```
+
+The key insight was that **bigrams mattered**. Single words like "dyspnea" or "fatigue" appeared across all classes. But phrases like "at rest" vs. "with exertion" vs. "walking upstairs" carried discriminative power.
+
+## What We Learned
+
+Three takeaways that extend well beyond this project:
+
+### 1. Messy Data is the Real Challenge
+
+Medical text is noisy. Abbreviations vary by institution (`SOB` vs `shortness of breath`), spelling errors are common in rapid documentation, and the same finding can be described a dozen different ways. We spent more time on data cleaning than model architecture — a ratio that holds true for most real-world ML projects.
+
+### 2. Simpler Models Can Win
+
+We tested everything from logistic regression to ensemble methods. The performance gap between simple and complex models was smaller than expected. In clinical settings, an interpretable model that a physician can understand and trust often beats a black box with marginally better accuracy.
+
+### 3. The Bottleneck is Validation, Not Technology
+
+Building the model was the easy part. The hard part is convincing clinicians that it works, getting IRB approval for prospective studies, and integrating predictions into existing workflows. Technology is rarely the bottleneck in medical AI — it's trust and process.
+
+## Why This Matters
+
+We're generating clinical text at an unprecedented rate. EMRs are full of documentation that's written once and rarely analyzed systematically. NLP gives us tools to mine this data for patterns that support clinical decision-making.
+
+This doesn't replace the clinician. It augments them. Imagine an EMR that flags a patient's notes and says: *"Based on documentation patterns, this patient's heart failure may be progressing from Class II to Class III — consider reassessment."*
+
+That's not science fiction. The building blocks exist today.
+
+## What's Next
+
+We're continuing to explore how language patterns in clinical documentation correlate with disease progression. The goal isn't to automate classification — it's to create tools that catch what humans might miss in the flood of daily documentation.
+
+---
+
+*This work was published in Scientific Reports (Nature). If you're working on NLP applications in clinical medicine, I'd love to [connect](/contact).*
