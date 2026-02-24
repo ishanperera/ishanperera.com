@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
-import { sql } from "@vercel/postgres";
+import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
+
+const sql = neon(process.env.DATABASE_URL!);
 
 const guestbookSchema = z.object({
   name: z.string().min(1, "Name is required").max(50),
@@ -9,7 +11,7 @@ const guestbookSchema = z.object({
 
 export async function GET() {
   try {
-    const { rows } = await sql`
+    const rows = await sql`
       SELECT id, name, message, created_at
       FROM guestbook
       ORDER BY created_at DESC
@@ -29,7 +31,7 @@ export async function POST(request: Request) {
     const ip = request.headers.get("x-forwarded-for") || "unknown";
 
     // Rate limit: 1 post per IP per hour
-    const { rows: recent } = await sql`
+    const recent = await sql`
       SELECT id FROM guestbook
       WHERE ip = ${ip} AND created_at > NOW() - INTERVAL '1 hour'
     `;
