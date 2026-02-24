@@ -1,39 +1,51 @@
 "use client";
 
-import { Car, Beer, Leaf, Languages } from "lucide-react";
+import { Car, Beer, Leaf, Languages, Sprout, Heart } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Spotlight } from "@/components/ui/Spotlight";
 
 const hobbies = [
   {
     icon: Car,
-    title: "'65 Mustang",
+    title: "Automotive",
     description:
-      "Restoring a classic 1965 Ford Mustang — hands-on mechanical work that's a perfect counterpoint to the digital world.",
+      "Hands-on work with Nissan, Toyota, and Ford vehicles — a mechanical counterpoint to the digital world.",
   },
   {
     icon: Beer,
-    title: "Homebrewing",
+    title: "Distilling & Brewing",
     description:
-      "Crafting beers from scratch. It's chemistry, patience, and creativity — not unlike research.",
+      "Amateur distiller, brewer, vintner, and mixologist. It's chemistry, patience, and creativity — not unlike research.",
   },
   {
     icon: Leaf,
-    title: "Mycology",
+    title: "Horticulture & Mycology",
     description:
-      "Growing and studying mushrooms. Fascinated by fungal biology, cultivation techniques, and gourmet varieties.",
+      "Amateur horticulturist and mycologist. Founded the HOLO Labs VCOM Community Garden providing free organic produce to students and staff.",
   },
   {
     icon: Languages,
-    title: "3 Languages",
+    title: "Languages",
     description:
-      "Fluent in English, Sinhala, and Spanish. Language shapes how you think and connect with the world.",
+      "Conversational in Spanish and Sinhalese alongside English. Language shapes how you connect with patients and communities.",
+  },
+  {
+    icon: Sprout,
+    title: "Community Gardening",
+    description:
+      "From the Christiansburg Community Garden to the VCOM campus — soil-tested, planned, and harvested seasonal plants for free community distribution.",
+  },
+  {
+    icon: Heart,
+    title: "Volunteering",
+    description:
+      "Ronald McDonald House, Habitat for Humanity, Virginia Beach EMS, ESL tutoring, and over a decade of community service across Virginia and Florida.",
   },
 ];
 
 export function HobbiesGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {hobbies.map((hobby, i) => (
         <ScrollReveal key={hobby.title} delay={i * 0.1}>
           <Spotlight className="h-full rounded-xl border border-border bg-bg-secondary p-6">

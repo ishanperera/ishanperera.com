@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Badge } from "@/components/ui/Badge";
@@ -30,27 +31,50 @@ export default function AboutPage() {
       <section className="container-wide pb-24">
         <ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div className="aspect-[4/5] rounded-xl bg-bg-tertiary border border-border" />
+            <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-border">
+              <Image
+                src="/headshot.jpg"
+                alt="Ishan Perera, D.O."
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             <div className="space-y-6 text-text-secondary leading-relaxed">
               <p>
-                I&apos;m Ishan Perera — a PGY-1 Neurosurgery Resident at Henry Ford
-                Providence Hospital, where I&apos;m training to become a neurosurgeon
-                while simultaneously building software, publishing research, and
-                growing businesses.
+                I&apos;m Ishan Perera — a PGY-1 Neurological Surgery Resident at
+                Henry Ford Health Providence Hospital through Michigan State
+                University College of Human Medicine, where I also serve as a
+                Clinical Instructor in the Department of Surgery.
               </p>
               <p>
-                My path has never been linear. I fell in love with programming as a
-                teenager, studied the sciences in college, and went to medical school
-                determined to merge my two worlds. Along the way, I co-founded Ravana
-                Solutions (a digital agency), became co-owner of EZ Lounge, and joined
-                the board at HOLO Labs.
+                My path has never been linear. I grew up working at the family
+                store, earned my EMT-B at 18, and spent two years as an Emergency
+                Department Technician at Sentara Princess Anne Hospital. I graduated
+                Summa Cum Laude from Old Dominion University with a B.S. in Biology
+                and minors in Chemistry and Computer Science, then earned my D.O.
+                from Edward Via College of Osteopathic Medicine with a 3.84 GPA —
+                where I was named Student Doctor of the Year and a Golden Ticket
+                Scholarship Finalist.
               </p>
               <p>
-                With 15+ peer-reviewed publications spanning AI/ML, neurosurgery, and
-                medical education, I believe the future of medicine is computational —
-                and I want to build it. When I&apos;m not in the OR or at a keyboard,
-                you&apos;ll find me restoring a &apos;65 Mustang, homebrewing, or
-                tending to my mushroom cultivation projects.
+                In medical school I co-founded HOLO Labs, the first student-led
+                research laboratory at VCOM to adopt a research brokership model.
+                I&apos;ve published 11 peer-reviewed works with 8+ more in progress,
+                presented 19 posters at national and regional conferences (including
+                AANS), and secured over $33,000 in research grants. I also served as
+                Chair of the Medical Student Section of the Medical Society of
+                Virginia, Deputy Editor at Cureus Journal, and co-chaired the
+                Overdose Prevention Task Force.
+              </p>
+              <p>
+                Outside the hospital and lab, I founded Ravana Solutions (a digital
+                agency), co-founded EZ Inn, and build software in React, Python,
+                Swift, and C++. When I truly need to unplug, you&apos;ll find me
+                working on automotive projects, brewing, cultivating mushrooms, or
+                volunteering — from Habitat for Humanity to the Ronald McDonald
+                House.
               </p>
             </div>
           </div>

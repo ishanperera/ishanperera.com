@@ -9,46 +9,46 @@ const cards = [
   {
     title: "Neurosurgery",
     description:
-      "PGY-1 Neurosurgery Resident at Henry Ford Providence Hospital. Training at the intersection of surgical precision and technological innovation.",
+      "PGY-1 Neurological Surgery Resident at Henry Ford Health Providence Hospital. Clinical Instructor, Department of Surgery, Michigan State University College of Human Medicine.",
     href: "/about",
     icon: <Brain size={28} />,
-    tags: ["Residency", "Henry Ford"],
+    tags: ["Residency", "MSU", "Henry Ford"],
     className: "md:col-span-2 md:row-span-2",
   },
   {
     title: "Code & Engineering",
     description:
-      "Full-stack development with React, Python, Next.js, and Swift. Building tools that bridge medicine and technology.",
+      "Full-stack development in C++, Java, Python, Swift, React, and Next.js. Built DRPLAP, DRP Submissions App, and run a digital agency.",
     href: "/projects",
     icon: <Code size={28} />,
-    tags: ["React", "Python", "Next.js", "Swift"],
+    tags: ["React", "Python", "Swift", "C++"],
     className: "md:col-span-1",
   },
   {
     title: "Research",
     description:
-      "15+ publications spanning AI/ML, neurosurgery, and medical education. Advancing the field through data-driven inquiry.",
+      "11 published works, 8+ in progress, 19 poster presentations, and $33K+ in grants. Focus areas: Chiari malformation, AI in medical education, and OMM.",
     href: "/research",
     icon: <BookOpen size={28} />,
-    tags: ["AI/ML", "Neurosurgery"],
+    tags: ["Neurosurgery", "AI/ML", "OMM"],
     className: "md:col-span-1",
   },
   {
     title: "Ventures",
     description:
-      "Co-founder of Ravana Solutions (digital agency), co-owner of EZ Lounge, board member at HOLO Labs.",
+      "Owner of Ravana Solutions (digital agency), Co-Founder of EZ Inn, and Co-Founder of HOLO Labs research laboratory.",
     href: "/projects",
     icon: <Rocket size={28} />,
-    tags: ["Ravana Solutions", "EZ Lounge", "HOLO Labs"],
+    tags: ["Ravana Solutions", "EZ Inn", "HOLO Labs"],
     className: "md:col-span-1",
   },
   {
     title: "The Polymath",
     description:
-      "Restoring a '65 Mustang, homebrewing, cultivating mushrooms, and fluent in three languages. Renaissance man energy.",
+      "Automotive mechanic, amateur distiller & brewer, mycologist, community gardener, and conversational in Spanish and Sinhalese.",
     href: "/about#hobbies",
     icon: <Sparkles size={28} />,
-    tags: ["Mustang", "Brewing", "Mycology", "3 Languages"],
+    tags: ["Automotive", "Brewing", "Mycology", "Languages"],
     className: "md:col-span-1",
     accent: true,
   },

@@ -6,38 +6,48 @@ export interface SkillCategory {
 export const technicalSkills: SkillCategory[] = [
   {
     name: "Languages",
-    skills: ["TypeScript", "Python", "Swift", "JavaScript", "SQL", "R"],
+    skills: ["C++", "Java", "JavaScript", "Python", "Swift", "PHP", "SQL", "R"],
   },
   {
-    name: "Frontend",
-    skills: ["React", "Next.js", "React Native", "Tailwind CSS", "Framer Motion"],
+    name: "Web & Mobile",
+    skills: ["React", "React Native", "Next.js", "Django", "HTML/CSS", "AJAX"],
   },
   {
-    name: "Backend & Data",
-    skills: ["Node.js", "PostgreSQL", "Prisma", "REST APIs", "GraphQL"],
+    name: "Data & ML",
+    skills: ["Statistical Analysis (R)", "NLP", "Voice Recognition", "Geometric Morphometrics"],
   },
   {
-    name: "AI / ML",
-    skills: ["PyTorch", "TensorFlow", "scikit-learn", "NLP", "Computer Vision"],
+    name: "Medical Imaging",
+    skills: ["3D Slicer", "MorphoJ"],
   },
   {
     name: "Tools & Platforms",
-    skills: ["Git", "Docker", "Vercel", "AWS", "Figma"],
+    skills: ["Git", "Unix", "Relational Databases", "Vercel"],
   },
 ];
 
 export const medicalSkills: SkillCategory[] = [
   {
     name: "Clinical",
-    skills: ["Neurosurgery", "OMM/OMT", "Surgical Technique", "Patient Care"],
+    skills: ["Neurosurgery", "OMM/OMT", "Emergency Medicine", "ACLS", "BLS", "Laryngoscopy"],
   },
   {
     name: "Research",
     skills: [
       "Clinical Research",
       "Systematic Reviews",
-      "Statistical Analysis",
       "IRB Protocols",
+      "Grant Writing",
+      "Geometric Morphometrics",
+    ],
+  },
+  {
+    name: "Product Development",
+    skills: [
+      "DRPLAP (Lexical Analysis Program)",
+      "DRP Submissions App",
+      "Keychain Naloxone Carrier",
+      "Affordable Video Laryngoscope Trainer",
     ],
   },
 ];

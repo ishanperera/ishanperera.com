@@ -9,10 +9,10 @@ import { Badge } from "@/components/ui/Badge";
 const featured = [
   {
     overline: "Publication",
-    title: "Machine Learning Applications in Neurosurgical Outcome Prediction",
+    title: "Geometric Morphometric Analysis of Brainstem and Cerebellum in Chiari I Malformation",
     description:
-      "Leveraging AI/ML to predict surgical outcomes and improve patient care. Published research exploring the intersection of computational methods and neurosurgery.",
-    tags: ["AI/ML", "Neurosurgery", "Research"],
+      "A novel 3D geometric morphometric protocol for identifying Chiari I Malformation, published in Frontiers in Neuroanatomy. Presented at AANS 2023 and 2025 Annual Scientific Meetings.",
+    tags: ["Neurosurgery", "Morphometrics", "Frontiers"],
     href: "/research",
     direction: "left" as const,
   },
@@ -20,19 +20,19 @@ const featured = [
     overline: "Venture",
     title: "Ravana Solutions",
     description:
-      "Co-founded a full-service digital agency building modern web applications, mobile apps, and AI-powered solutions for businesses across industries.",
-    tags: ["Next.js", "React Native", "AI", "Agency"],
-    href: "https://ravanasolutions.com",
+      "Founded a full-service digital agency building modern web applications, mobile apps, and AI-powered solutions. Serving businesses across industries since 2021.",
+    tags: ["Next.js", "React Native", "AI/ML", "Web Development"],
+    href: "https://www.ravanasolutions.com/",
     external: true,
     direction: "right" as const,
   },
   {
-    overline: "Open Source",
-    title: "Developer Tools & Projects",
+    overline: "Research",
+    title: "Predicting NYHA Heart Failure Classification with AI",
     description:
-      "Building and contributing to open-source tools that help developers and researchers be more productive. From CLI tools to full-stack applications.",
-    tags: ["TypeScript", "Python", "Open Source"],
-    href: "/projects",
+      "Developed a voice recognition-based analytical model to predict heart failure classification from medical student notes. Published in Scientific Reports (Nature).",
+    tags: ["AI/ML", "NLP", "Scientific Reports"],
+    href: "/research",
     direction: "left" as const,
   },
 ];

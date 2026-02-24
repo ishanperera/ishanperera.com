@@ -67,10 +67,10 @@ export function HeroSection() {
           className="mt-8 space-y-1"
         >
           <p className="text-lg md:text-xl text-text-secondary">
-            PGY-1 Neurosurgery Resident
+            PGY-1 Neurological Surgery Resident
           </p>
           <p className="text-base text-text-muted">
-            Henry Ford Providence Hospital
+            Henry Ford Health Providence Hospital &middot; Michigan State University
           </p>
         </motion.div>
 
