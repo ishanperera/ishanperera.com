@@ -159,7 +159,7 @@ function generateBrainPoints(count: number): Float32Array {
   return positions;
 }
 
-function Particles() {
+function Particles({ darkMode = true }: { darkMode?: boolean }) {
   const pointsRef = useRef<THREE.Points>(null);
 
   const { positions, colors } = useMemo(() => {
@@ -216,16 +216,16 @@ function Particles() {
         size={0.03}
         vertexColors
         transparent
-        opacity={0.55}
+        opacity={darkMode ? 0.55 : 0.7}
         sizeAttenuation
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={darkMode ? THREE.AdditiveBlending : THREE.NormalBlending}
       />
     </points>
   );
 }
 
-export function ParticleBrain() {
+export function ParticleBrain({ darkMode = true }: { darkMode?: boolean }) {
   return (
     <Canvas
       camera={{ position: [1.5, 0.8, 2.8], fov: 50 }}
@@ -237,7 +237,7 @@ export function ParticleBrain() {
       }}
       gl={{ alpha: true, antialias: false }}
     >
-      <Particles />
+      <Particles darkMode={darkMode} />
     </Canvas>
   );
 }

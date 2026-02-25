@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { Download } from "lucide-react";
+import { Download, FileText } from "lucide-react";
 import { Timeline } from "@/components/about/Timeline";
 import { HobbiesGrid } from "@/components/about/HobbiesGrid";
+import { GitHubContributions } from "@/components/about/GitHubContributions";
 import { technicalSkills, medicalSkills } from "@/data/skills";
 
 export const metadata: Metadata = {
@@ -77,13 +80,21 @@ export default function AboutPage() {
                 volunteering — from Habitat for Humanity to the Ronald McDonald
                 House.
               </p>
-              <a
-                href="/Ishan-Perera-CV.pdf"
-                download
-                className="inline-flex items-center gap-2 rounded-lg bg-accent-primary px-5 py-2.5 font-display font-semibold text-sm text-bg-primary transition-all hover:shadow-[0_0_30px_rgba(0,229,255,0.3)]"
-              >
-                <Download size={16} /> Download CV
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="/Ishan-Perera-CV.pdf"
+                  download
+                  className="inline-flex items-center gap-2 rounded-lg bg-accent-primary px-5 py-2.5 font-display font-semibold text-sm text-bg-primary transition-all hover:shadow-[0_0_30px_rgba(0,229,255,0.3)]"
+                >
+                  <Download size={16} /> Download CV
+                </a>
+                <Link
+                  href="/cv"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-bg-secondary px-5 py-2.5 font-display font-semibold text-sm text-text-secondary transition-colors hover:text-accent-primary hover:border-accent-primary/30"
+                >
+                  <FileText size={16} /> Interactive CV
+                </Link>
+              </div>
             </div>
           </div>
         </ScrollReveal>
@@ -158,6 +169,21 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* GitHub Contributions */}
+      <section className="container-wide pb-24">
+        <ScrollReveal>
+          <SectionHeading
+            overline="// open source"
+            title="GitHub Contributions"
+          />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Card hover={false}>
+            <GitHubContributions />
+          </Card>
+        </ScrollReveal>
       </section>
 
       {/* Hobbies */}

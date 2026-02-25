@@ -12,6 +12,7 @@ import {
   FolderOpen,
   BookOpen,
   Wrench,
+  FileText as FileTextIcon,
   Mail,
   Github,
   Linkedin,
@@ -35,6 +36,7 @@ const pageIcons: Record<string, React.ReactNode> = {
   "/projects": <FolderOpen size={16} />,
   "/blog": <BookOpen size={16} />,
   "/uses": <Wrench size={16} />,
+  "/cv": <FileTextIcon size={16} />,
   "/contact": <Mail size={16} />,
 };
 

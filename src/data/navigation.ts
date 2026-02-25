@@ -4,7 +4,7 @@ export const navLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Blog", href: "/blog" },
   { label: "Uses", href: "/uses" },
-  { label: "Contact", href: "/contact" },
+  { label: "CV", href: "/cv" },
 ] as const;
 
 export const footerExtraLinks = [

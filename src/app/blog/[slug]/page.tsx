@@ -10,6 +10,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { TableOfContents } from "@/components/blog/TableOfContents";
+import { ShareButtons } from "@/components/blog/ShareButtons";
+import { Comments } from "@/components/blog/Comments";
 import { mdxComponents } from "@/components/blog/MDXComponents";
 import { getPostBySlug, getAllSlugs } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
@@ -51,6 +53,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <ScrollReveal>
           <Link
             href="/blog"
+
             className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent-primary transition-colors mb-8"
           >
             <ArrowLeft size={14} /> Back to blog
@@ -68,15 +71,18 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-text-muted mb-12">
-            <span className="flex items-center gap-1.5">
-              <Calendar size={14} />
-              {formatDate(post.date)}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Clock size={14} />
-              {post.readingTime} min read
-            </span>
+          <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-text-muted mb-12">
+            <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} />
+                {formatDate(post.date)}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} />
+                {post.readingTime} min read
+              </span>
+            </div>
+            <ShareButtons title={post.title} slug={slug} />
           </div>
         </ScrollReveal>
 
@@ -101,6 +107,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           <aside className="hidden xl:block w-64 flex-shrink-0">
             <TableOfContents />
           </aside>
+        </div>
+
+        {/* Comments */}
+        <div className="mt-16 pt-12 border-t border-border">
+          <h2 className="font-display text-2xl font-bold text-text-primary mb-8">
+            Comments
+          </h2>
+          <Comments />
         </div>
       </div>
     </div>

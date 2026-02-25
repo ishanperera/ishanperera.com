@@ -75,7 +75,7 @@ export function MobileMenu() {
                     >
                       <Link
                         href={link.href}
-                        onClick={() => setIsOpen(false)}
+                          onClick={() => setIsOpen(false)}
                         className="block rounded-lg px-4 py-2.5 text-sm text-text-secondary transition-colors hover:bg-bg-tertiary hover:text-accent-primary"
                       >
                         {link.label}

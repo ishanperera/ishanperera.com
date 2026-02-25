@@ -53,6 +53,7 @@ export const metadata: Metadata = {
       "application/rss+xml": "/feed.xml",
     },
   },
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,

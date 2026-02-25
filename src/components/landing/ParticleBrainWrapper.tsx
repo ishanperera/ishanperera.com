@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useReducedMotion } from "motion/react";
+import { useTheme } from "next-themes";
 
 const ParticleBrain = dynamic(
   () =>
@@ -11,8 +12,9 @@ const ParticleBrain = dynamic(
 
 export function ParticleBrainWrapper() {
   const prefersReducedMotion = useReducedMotion();
+  const { resolvedTheme } = useTheme();
 
   if (prefersReducedMotion) return null;
 
-  return <ParticleBrain />;
+  return <ParticleBrain darkMode={resolvedTheme !== "light"} />;
 }
