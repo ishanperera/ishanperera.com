@@ -7,12 +7,46 @@ const contactSchema = z.object({
   email: z.string().email("Invalid email address"),
   subject: z.string().min(1, "Subject is required").max(200),
   message: z.string().min(10, "Message must be at least 10 characters").max(5000),
+  website: z.string().optional(),
 });
+
+// Rate limiting: max 3 submissions per IP per hour
+const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MAX = 3;
+const rateMap = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const timestamps = rateMap.get(ip) ?? [];
+  const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW);
+  rateMap.set(ip, recent);
+
+  if (recent.length >= RATE_LIMIT_MAX) return true;
+  recent.push(now);
+  rateMap.set(ip, recent);
+  return false;
+}
 
 export async function POST(request: Request) {
   try {
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: "Too many submissions. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const data = contactSchema.parse(body);
+
+    // Honeypot: if the hidden field has a value, it's a bot
+    if (data.website) {
+      // Return success to not tip off the bot, but don't send the email
+      return NextResponse.json({ success: true });
+    }
 
     const apiKey = process.env.RESEND_API_KEY;
     const contactEmail = process.env.CONTACT_EMAIL || "ishanperera07@gmail.com";
