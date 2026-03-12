@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useMemo, useCallback, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree, type ThreeEvent } from "@react-three/fiber";
 import * as THREE from "three";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
@@ -213,8 +213,7 @@ function buildConnections(
 // ─── Adjacency list for impulse cascading ───────────────────────────
 
 function buildAdjacency(
-  connections: Connection[],
-  count: number
+  connections: Connection[]
 ): Map<number, { connIdx: number; neighbor: number }[]> {
   const adj = new Map<number, { connIdx: number; neighbor: number }[]>();
   for (let ci = 0; ci < connections.length; ci++) {
@@ -425,6 +424,8 @@ const particleVertexShader = /* glsl */ `
 `;
 
 const particleFragmentShader = /* glsl */ `
+  uniform float uBaseOpacity;
+
   varying vec3 vColor;
   varying float vActivation;
 
@@ -433,7 +434,7 @@ const particleFragmentShader = /* glsl */ `
     float dist = length(gl_PointCoord - vec2(0.5));
     if (dist > 0.5) discard;
 
-    float alpha = smoothstep(0.5, 0.1, dist);
+    float alpha = smoothstep(0.5, 0.1, dist) * uBaseOpacity;
 
     // Brightness boost for activated particles
     vec3 color = vColor + vec3(0.3, 0.3, 0.4) * vActivation;
@@ -551,7 +552,7 @@ function BrainScene({ darkMode }: { darkMode: boolean }) {
     const conns = buildConnections(pos, PARTICLE_COUNT, 3, 0.15);
 
     // Build adjacency
-    const adj = buildAdjacency(conns, PARTICLE_COUNT);
+    const adj = buildAdjacency(conns);
 
     // Pre-compute instance matrices for connections
     const matrices = new Float32Array(conns.length * 16);
@@ -639,6 +640,7 @@ function BrainScene({ darkMode }: { darkMode: boolean }) {
         uMousePosition: { value: new THREE.Vector3(0, 0, 0) },
         uMouseActive: { value: 0 },
         uInteractionRadius: { value: 0.4 },
+        uBaseOpacity: { value: darkMode ? 0.55 : 0.7 },
       },
       transparent: true,
       depthWrite: false,
@@ -697,6 +699,18 @@ function BrainScene({ darkMode }: { darkMode: boolean }) {
     });
   }, [darkMode]);
 
+  // ─── Dispose GPU resources on unmount / theme change ─────────────
+  useEffect(() => {
+    return () => {
+      particleMaterial.dispose();
+      connectionMaterial.dispose();
+      particleGeometry.dispose();
+      impulseGeometry.dispose();
+      connectionGeometry.dispose();
+      impulseMaterial.dispose();
+    };
+  }, [particleMaterial, connectionMaterial, particleGeometry, impulseGeometry, connectionGeometry, impulseMaterial]);
+
   // ─── Initialize connection InstancedMesh ────────────────────────
   useEffect(() => {
     const mesh = connectionMeshRef.current;
@@ -719,7 +733,7 @@ function BrainScene({ darkMode }: { darkMode: boolean }) {
 
   // ─── Mouse handlers ─────────────────────────────────────────────
   const onPointerMove = useCallback(
-    (e: { point: THREE.Vector3 }) => {
+    (e: ThreeEvent<PointerEvent>) => {
       mousePos.current.copy(e.point);
       mouseTarget.current = 1;
       parallaxTarget.current.x = (e.point.x / (viewport.width / 2)) * 5;
@@ -746,7 +760,7 @@ function BrainScene({ darkMode }: { darkMode: boolean }) {
     mouseActive.current = THREE.MathUtils.lerp(
       mouseActive.current,
       mouseTarget.current,
-      dt * 4
+      dt * 2
     );
 
     // ─ Parallax tilt ─
